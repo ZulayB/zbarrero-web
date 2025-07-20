@@ -59,11 +59,17 @@ import Layout from '../layouts/Layout.astro';
         Descubre Nuestros Servicios
       </a>
     </div>
+ <div class="w-full mb-[10px] absolute bottom-0">
+  <hr class="border-t-4 border-dashed border-white w-full">
+</div>
   </section>
 
   <!-- Servicios de Costura -->
-  <section id="servicios" class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-6">
+  <section id="servicios" class="pt-[10px] md:pt-[10px] bg-white">
+     <div class="w-full">
+    <hr class="border-t-4 border-dashed border-yellow-400 w-full">
+  </div>
+    <div class="container mx-auto px-6 py-16 md:py-24">
       <div class="text-center mb-16 md:mb-20">
         <h2 class="text-2xl md:text-5xl font-bold mb-6 text-gray-800">Nuestros Servicios de Costura</h2>
         <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Ofrecemos servicios profesionales de costura y arreglos con más de 20 años de experiencia</p>
@@ -124,22 +130,31 @@ import Layout from '../layouts/Layout.astro';
             </ul>
           </div>
         </div>
-      </div>
-    </div>
+    </div>   
+  </div> 
+  <div class="w-full mb-[10px]">
+    <hr class="border-t-4 border-dashed border-yellow-400 w-full">
+  </div>
   </section>
 
   <!-- Servicios de Lavandería -->
-  <section class="py-16 md:py-24 bg-gray-50 bg-yellow-500">
-    <div class="container mx-auto px-6">
+  <section class="relative pt-[10px] md:pt-[10px] bg-white bg-yellow-500">
+      <div class="w-full">
+    <hr class="border-t-4 border-dashed border-white w-full">
+  </div>
+    <div class="container mx-auto px-6 py-16 md:py-24">
       <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
         <div class="order-2 lg:order-1">
-          <div class="h-64 md:h-96 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl relative overflow-hidden shadow-xl">
-            <img src="/images/lavanderia.png" alt="Servicios de lavandería" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-            <div class="absolute inset-0 flex items-center justify-center bg-blue-100" style="display: none;">
-              <div class="text-6xl md:text-8xl"><img src="/images/lavenderia.png" alt="Textiles del hogar" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"></div>
-            </div>
-          </div>
-        </div>
+  <div class="h-70 md:h-[460px] bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl relative overflow-hidden shadow-xl">
+    <img src="/images/lavanderia.png" alt="Servicios de lavandería" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+    <div class="absolute inset-0 flex items-center justify-center bg-blue-100" style="display: none;">
+      <div class="text-6xl md:text-8xl">
+        <img src="/images/lavenderia.png" alt="Textiles del hogar" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      </div>
+    </div>
+  </div>
+</div>
+
         
         <div class="order-1 lg:order-2">
           <h2 class="text-2xl md:text-5xl font-bold mb-6 text-white">Servicios de Lavandería y Tintorería</h2>
@@ -148,7 +163,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="space-y-6 md:space-y-8">
             <div class="flex items-start space-x-4 md:space-x-6">
               <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-yellow-100 rounded-full flex items-center justify-center">
-                <span class="text-xl md:text-2xl">🧽</span>
+                <span class="text-xl md:text-2xl">ð§½</span>
               </div>
               <div>
                 <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3 text-white">Lavado en Seco</h3>
@@ -158,7 +173,7 @@ import Layout from '../layouts/Layout.astro';
             
             <div class="flex items-start space-x-4 md:space-x-6">
               <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                <span class="text-xl md:text-2xl">💧</span>
+                <span class="text-xl md:text-2xl">ð§</span>
               </div>
               <div>
                 <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3 text-white">Lavado Normal</h3>
@@ -168,7 +183,7 @@ import Layout from '../layouts/Layout.astro';
             
             <div class="flex items-start space-x-4 md:space-x-6">
               <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center">
-                <span class="text-xl md:text-2xl">👕</span>
+                <span class="text-xl md:text-2xl">ð</span>
               </div>
               <div>
                 <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3 text-white">Planchado Profesional</h3>
@@ -178,12 +193,19 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </div>
+    </div>  
+
+    <div class="w-full absolute bottom-2.5">
+      <hr class="border-t-4 border-dashed border-white w-full">
     </div>
   </section>
 
   <!-- Cursos Personalizados -->
-  <section id="cursos" class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-6">
+  <section id="cursos" class="pt-[10px] md:pt-[10px] bg-white ">
+    <div class="w-full">
+    <hr class="border-t-4 border-dashed border-yellow-400 w-full">
+  </div>
+    <div class="container mx-auto px-6 py-16 md:py-24">
       <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
         <div>
           <h2 class="text-2xl md:text-5xl font-bold mb-6 text-gray-800">Cursos Personalizados de Costura</h2>
@@ -214,10 +236,15 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
     </div>
+      <div class="w-full mb-[10px]">
+    <hr class="border-t-4 border-dashed border-yellow-400 w-full">
+  </div>
   </section>
 
   <!-- Google Maps -->
-  <section class="w-full h-64 md:h-96">
+<section class="w-full h-auto md:h-[32rem] flex flex-col md:flex-row">
+  <!-- Mapa: 2/3 -->
+  <div class="w-full md:w-2/3 h-80 md:h-full">
     <iframe 
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d553.1056794541912!2d-0.48648839283158285!3d38.35273397403062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd623743047bffff%3A0xeb1f8ba32319732!2sCosturas%20Alicante!5e0!3m2!1sit!2sco!4v1752970799872!5m2!1sit!2sco"
       width="100%" 
@@ -228,11 +255,20 @@ import Layout from '../layouts/Layout.astro';
       referrerpolicy="no-referrer-when-downgrade"
       title="Ubicación Costuras Alicante">
     </iframe>
-  </section>
+  </div>
+
+  <!-- Imagen: 1/3 -->
+  <div class="w-full md:w-1/3 h-80 md:h-full">
+    <img src="/images/costurasalicante.jpg" alt="Costuras Alicante" class="w-full h-full object-cover" />
+  </div>
+</section>
 
   <!-- Footer -->
-  <footer id="contacto" class="bg-gray-900 text-white py-12 md:py-16">
-    <div class="container mx-auto px-6">
+  <footer id="contacto" class="bg-gray-900 text-white pt-[10px] md:pt-[10px]">
+       <div class="w-full">
+    <hr class="border-t-4 border-dashed border-yellow-400 w-full">
+  </div>
+    <div class="container mx-auto px-6 py-16 md:py-24">
       <div class="grid md:grid-cols-2 gap-12 md:gap-16">
   <!-- Horarios de Atención -->
   <div>
@@ -269,13 +305,13 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
         <div class="flex items-center space-x-3">
-          <div class="text-yellow-400"><i class="fas fa-phone text-white"></i></div>
+          <div class="text-yellow-400"><i class="fas fa-phone text-yellow-400"></i></div>
           <a href="tel:+34615689300" class="hover:text-yellow-400 transition-colors text-sm md:text-base">
             +34 615 689 300
           </a>
         </div>
         <div class="flex items-center space-x-3">
-          <div class="text-yellow-400">✉️</div>
+          <div class="text-yellow-400"><i class="fa-solid fa-envelope"></i></div>
           <a href="mailto:costuras.alicante@hotmail.com" class="hover:text-yellow-400 transition-colors text-sm md:text-base">
             costuras.alicante@hotmail.com
           </a>
