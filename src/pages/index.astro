@@ -332,13 +332,17 @@ import Layout from '../layouts/Layout.astro';
     const navLinks = document.querySelectorAll('.nav-link');
     const phoneDesktop = document.getElementById('phone-desktop');
     
+    if (!header) return;
+
     if (window.scrollY > 50) {
       // Scrolled - white background, dark text
       header.classList.remove('bg-transparent', 'shadow-none');
       header.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-lg');
       
       // Logo to dark
-      logo.classList.remove('brightness-0', 'invert');
+      if (logo) {
+        logo.classList.remove('brightness-0', 'invert');
+      }
       
       // Nav links to dark
       navLinks.forEach(link => {
@@ -357,7 +361,9 @@ import Layout from '../layouts/Layout.astro';
       header.classList.add('bg-transparent', 'shadow-none');
       
       // Logo to white
-      logo.classList.add('brightness-0', 'invert');
+      if (logo) {
+        logo.classList.add('brightness-0', 'invert');
+      }
       
       // Nav links to white
       navLinks.forEach(link => {
