@@ -1,0 +1,32 @@
+Crea una landing page para un negocio llamado Costuras Alicante, ubicado en España. El negocio ofrece servicios de costura y lavandería. 
+El diseño debe ser limpio, moderno y responsivo. El color predominante es el amarillo, blanco y algunas cosas en negro. 
+Quiero que sea construido en astro y en tailwind que ya estan instalados en este proyecto.
+
+Debe contener:
+
+1. Header con logo (pon un placeholder en svg nombre "Costuras Alicante", navegación simple con enlaces: Inicio, Servicios, Contacto, que navega navega en la misma pagina..
+
+2. Hero Section (quiero poder manejar también la altura de esta secciòn en autonomia)  con una imagen de fondo relacionada con costura o lavandería (placeholder), un título llamativo como: “Tu taller de confianza en Alicante”, y un subtítulo: “Arreglos de ropa y lavandería con calidad y cuidado”.
+
+3. Sección de servicios de costura, con íconos o tarjetas que expliquen los arreglos disponibles: 
+
+Ropa de Vestir
+Arreglos y ajustes para prendas de uso diario y formal.
+Incluye:
+Chaquetas, Americanas, Pantalones, Vestidos, Camisas, Blusas, Abrigos
+
+🪡 Sastrería y Modificaciones Personalizadas
+Servicios especializados para adaptar, transformar o renovar prendas.
+Incluye:
+Arreglos de sastrería, Ajustes de talla, Cambios de cierre o botones, Reparación de costuras
+
+🏠 Textiles para el Hogar
+Ajustes, reformas y mantenimiento de elementos textiles del hogar.
+Incluye:
+Cortinas, Mantas, Fundas (cama, cojines, sofás), Edredones
+
+4. Sección de lavandería, breve, con descripción de servicios: lavado en seco, lavado normal, planchado.
+
+5. mapa full width con la ubicacion
+
+Footer con dirección en Alicante (Avenida Alcoy Nº 9 - 03010 Alicante), teléfono (+34 615689300), y redes sociales (Facebook e Instagram), horarios de atencion (Horarios: Lun-Vie: 9-14 / 17-20 | Festivos: Cerrado)
