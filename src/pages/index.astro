@@ -6,9 +6,10 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Header -->
   <header id="header" class="bg-transparent shadow-none fixed w-full top-0 z-50 transition-all duration-300">
-    <nav class="relative container mx-auto px-4 md:px-6 py-5 md:py-5 flex justify-between items-center">
+    <nav class="relative px-4 md:px-8 lg:px-16 xl:px-24 py-5 flex justify-between items-center">
+
       <div class="flex items-center">
-        <img src="/images/logo_costuras.svg" alt="Costuras Alicante Logo" class="h-[35px] md:h-[50px] mr-4 filter brightness-0 invert transition-all duration-300" id="logo">
+        <img src="/images/logo_costuras.svg" alt="Costuras Alicante Logo" class="h-[30px] md:h-[40px] lg:h-[45px] mr-4 filter brightness-0 invert transition-all duration-300" id="logo">
       </div>
       
       <!-- Desktop Menu -->
@@ -20,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
           <li><a href="#contacto" class="text-white hover:text-yellow-400 transition-all duration-300 font-medium nav-link">Contacto</a></li>
         </ul>
        <div
-  class="flex items-center space-x-2 font-medium transition-all duration-300 text-white bg-white/10 px-4 py-1.5 rounded-full text-[20px] border border-white"
+  class="hidden lg:flex items-center space-x-2 font-medium transition-all duration-300 text-white bg-white/10 px-4 py-1.5 rounded-full text-[20px] border border-white"
   id="phone-desktop">
   <i class="fas fa-phone text-yellow-500"></i>
   <span>+34 615 689 300</span>
@@ -41,7 +42,7 @@ import Layout from '../layouts/Layout.astro';
   </header>
 
   <!-- Mobile Contact Fixed Button -->
- <div class="md:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+ <div class="lg:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
   <a href="tel:+34615689300"
      class="w-64 bg-yellow-500 text-gray-800 px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-yellow-600 transition-all duration-300 flex items-center justify-center space-x-2">
     <i class="fas fa-phone text-gray-800"></i>
@@ -50,11 +51,14 @@ import Layout from '../layouts/Layout.astro';
 </div>
 
   <!-- Hero Section -->
-  <section id="inicio" class="relative h-[60vh] md:min-h-[92vh] flex items-center justify-center overflow-hidden" style="background-image: url('/images/hero-image.png'); background-size: cover; background-position: center;">
+  <section id="inicio" class="relative h-[60vh] sm:h-[70vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden" style="background-image: url('/images/hero-image.png'); background-size: cover; background-position: center;">
     <div class="absolute inset-0 bg-black/45"></div>   
     <div class="relative z-10 text-center text-white px-4 md:px-6 max-w-5xl mx-auto">
       <h1 class="text-3xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight pt-8 md:pt-12">Tu taller de costura en Alicante</h1>
-      <p class="w-full text-center text-lg md:text-3xl lg:text-3xl leading-relaxed md:leading-loose mb-8 md:mb-12font-light">Ajustes y arreglos para ropa casual y de alta costura.<br> Lavandería y Servicio de Tintorería</p>
+      <p class="w-full text-center text-lg leading-[1.6] md:text-3xl md:leading-[1.5] mb-8 md:mb-12 font-light">
+  Ajustes y arreglos para ropa casual y de alta costura.<br>
+  Lavandería y Servicio de Tintorería
+</p>
       <a href="#servicios" class="inline-block bg-yellow-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-yellow-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
         Descubre Nuestros Servicios
       </a>
@@ -281,7 +285,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="grid md:grid-cols-4 gap-12 md:gap-8 items-center">
       <!-- Logo -->
       <div class="flex items-center justify-center">
-        <img src="/images/logo_costuras_footer.svg" alt="Costuras Alicante" class="h-36 md:h-64">
+        <img src="/images/logo_costuras_footer.svg" alt="Costuras Alicante" class="h-36 md:h-56">
       </div>
       
       <!-- Contáctanos (IZQUIERDA) -->
