@@ -43,19 +43,18 @@ import Layout from '../layouts/Layout.astro';
   <!-- Mobile Contact Fixed Button -->
  <div class="md:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
   <a href="tel:+34615689300"
-     class="w-64 bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-yellow-600 transition-all duration-300 flex items-center justify-center space-x-2">
-    <span>📞</span>
+     class="w-64 bg-yellow-500 text-gray-800 px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-yellow-600 transition-all duration-300 flex items-center justify-center space-x-2">
+    <i class="fas fa-phone text-gray-800"></i>
     <span class="text-xl">+34 615 689 300</span>
   </a>
 </div>
 
   <!-- Hero Section -->
   <section id="inicio" class="relative h-[60vh] md:min-h-[92vh] flex items-center justify-center overflow-hidden" style="background-image: url('/images/hero-image.png'); background-size: cover; background-position: center;">
-    <div class="absolute inset-0 bg-gradient-to-br from-yellow-400 to-yellow-600 opacity-25"></div>
-    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="absolute inset-0 bg-black/45"></div>   
     <div class="relative z-10 text-center text-white px-4 md:px-6 max-w-5xl mx-auto">
       <h1 class="text-3xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight pt-8 md:pt-12">Tu taller de costura en Alicante</h1>
-      <p class="text-base md:text-2xl lg:text-3xl mb-8 md:mb-12 max-w-3xl mx-auto font-light">Arreglos de ropa, servicio de lavandería y tintorería con calidad y cuidado profesional</p>
+      <p class="w-full text-center text-lg md:text-3xl lg:text-3xl leading-relaxed md:leading-loose mb-8 md:mb-12font-light">Ajustes y arreglos para ropa casual y de alta costura.<br> Lavandería y Servicio de Tintorería</p>
       <a href="#servicios" class="inline-block bg-yellow-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-yellow-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
         Descubre Nuestros Servicios
       </a>
@@ -75,8 +74,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
           <div class="h-48 md:h-64 bg-gradient-to-br from-gray-200 to-gray-300 relative overflow-hidden">
             <img src="/images/ropa-vestir.png" alt="Ropa de vestir" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-            <div class="absolute inset-0 flex items-center justify-center bg-gray-200" style="display: none;">
-              <div class="text-4xl md:text-6xl">👔</div>
+            <div class="absolute inset-0 flex items-center justify-center bg-gray-200" style="display: none;">              
             </div>
           </div>
           <div class="p-6 md:p-8">
@@ -94,8 +92,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
           <div class="h-48 md:h-64 bg-gradient-to-br from-yellow-100 to-yellow-200 relative overflow-hidden">
             <img src="/images/sastreria.png" alt="Sastrería" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-            <div class="absolute inset-0 flex items-center justify-center bg-yellow-100" style="display: none;">
-              <div class="text-4xl md:text-6xl">🪡</div>
+            <div class="absolute inset-0 flex items-center justify-center bg-yellow-100" style="display: none;">             
             </div>
           </div>
           <div class="p-6 md:p-8">
@@ -115,8 +112,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="h-48 md:h-64 bg-gradient-to-br from-gray-200 to-gray-300 relative overflow-hidden">
             <img src="/images/textiles-hogar.png" alt="Textiles del hogar" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="absolute inset-0 flex items-center justify-center bg-gray-200" style="display: none;">
-              <div class="text-4xl md:text-6xl">🏠</div>
-            </div>
+             </div>
           </div>
           <div class="p-6 md:p-8">
             <h3 class="text-lg md:text-2xl font-bold mb-4 text-gray-800">Textiles para el Hogar</h3>
@@ -212,8 +208,7 @@ import Layout from '../layouts/Layout.astro';
         <div>
           <div class="h-64 md:h-96 bg-gradient-to-br from-purple-100 to-pink-200 rounded-2xl relative overflow-hidden shadow-xl">
             <img src="/images/cursos-costura.png" alt="Cursos de costura" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-            <div class="absolute inset-0 flex items-center justify-center bg-purple-100" style="display: none;">
-              <div class="text-6xl md:text-8xl">✂️</div>
+            <div class="absolute inset-0 flex items-center justify-center bg-purple-100" style="display: none;">             
             </div>
           </div>
         </div>
@@ -239,73 +234,69 @@ import Layout from '../layouts/Layout.astro';
   <footer id="contacto" class="bg-gray-900 text-white py-12 md:py-16">
     <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-12 md:gap-16">
-        <div>
-          <h3 class="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-yellow-400">Horarios de Atención</h3>
-          <div class="space-y-3 md:space-y-4 text-base md:text-lg">
-            <div class="flex flex-col md:flex-row md:justify-between md:items-center py-2 md:py-3 border-b border-gray-700">
-              <span class="font-medium">Lunes - Viernes</span>
-              <span class="text-yellow-400 text-sm md:text-base">9:00 - 14:00 / 17:00 - 20:00</span>
-            </div>
-            <div class="flex flex-col md:flex-row md:justify-between md:items-center py-2 md:py-3 border-b border-gray-700">
-              <span class="font-medium">Sábados</span>
-              <span class="text-yellow-400 text-sm md:text-base">9:00 - 14:00</span>
-            </div>
-            <div class="flex flex-col md:flex-row md:justify-between md:items-center py-2 md:py-3 border-b border-gray-700">
-              <span class="font-medium">Domingos y Festivos</span>
-              <span class="text-red-400 text-sm md:text-base">Cerrado</span>
-            </div>
+  <!-- Horarios de Atención -->
+  <div>
+    <h3 class="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-yellow-400">Horarios de Atención</h3>
+    <div class="space-y-3 md:space-y-4 text-base md:text-lg">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center py-2 md:py-3 border-b border-gray-700">
+        <span class="font-medium">Lunes - Viernes</span>
+        <span class="text-yellow-400 text-sm md:text-base">9:00 - 14:00 / 17:00 - 20:00</span>
+      </div>
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center py-2 md:py-3 border-b border-gray-700">
+        <span class="font-medium">Sábados</span>
+        <span class="text-yellow-400 text-sm md:text-base">9:00 - 14:00</span>
+      </div>
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center py-2 md:py-3 border-b border-gray-700">
+        <span class="font-medium">Domingos y Festivos</span>
+        <span class="text-red-400 text-sm md:text-base">Cerrado</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contáctanos -->
+  <div class="w-full">
+    <h3 class="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-yellow-400">Contáctanos</h3>
+
+    <div class="flex flex-col md:flex-row gap-8 w-full">
+      <!-- Dónde estamos -->
+      <div class="w-full md:w-1/2 space-y-4">
+        <h4 class="text-xl font-bold text-white-400">Dónde estamos</h4>
+        <div class="flex items-start space-x-3">
+          <div class="text-yellow-400 mt-1"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <p class="font-medium">Avenida Alcoy Nº 9</p>
+            <p class="text-gray-300 text-sm md:text-base">03010 Alicante, España</p>
           </div>
         </div>
-        
-        <div class="grid grid-cols-2 gap-6 md:gap-8">
-          <!-- Dónde estamos -->
-          <div class="w-full">
-            <!-- Título principal -->
-            <h3 class="w-full text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-yellow-400">
-              Contáctanos
-            </h3>
-            <!-- Contenedor en columnas (stack en mobile, lado a lado en desktop) -->
-            <div class="flex flex-col md:flex-row gap-8">              
-              <!-- Columna 1: Dónde estamos -->
-              <div class="flex-1 space-y-4">
-                <h4 class="text-xl font-bold text-white-400">Dónde estamos</h4>
-                <div class="flex items-start space-x-3">
-                  <div class="text-yellow-400 mt-1">📍</div>
-                  <div>
-                    <p class="font-medium">Avenida Alcoy Nº 9</p>
-                    <p class="text-gray-300 text-sm md:text-base">03010 Alicante, España</p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <div class="text-yellow-400"><i class="fas fa-phone text-white"></i></div>
-                  <a href="tel:+34615689300" class="hover:text-yellow-400 transition-colors text-sm md:text-base">
-                    +34 615 689 300
-                  </a>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <div class="text-yellow-400">✉️</div>
-                  <a href="mailto:costuras.alicante@hotmail.com" class="hover:text-yellow-400 transition-colors text-sm md:text-base">
-                  costuras.alicante@hotmail.com
-                  </a>
-                </div>
-              </div>
-              <!-- Columna 2: Síguenos -->
-              <div class="flex-1">
-                <h4 class="text-xl font-bold text-white mb-4">Síguenos</h4>
-                <div class="flex space-x-4">
-                  <a href="https://web.facebook.com/costurasalicanteoficial" target="_blank" class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
-                    <i class="fab fa-facebook-f text-white text-lg"></i>
-                  </a>
-                  <a href="https://www.instagram.com/costurasalicanteoficial/" target="_blank" class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
-                    <i class="fab fa-instagram text-white text-lg"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>  
+        <div class="flex items-center space-x-3">
+          <div class="text-yellow-400"><i class="fas fa-phone text-white"></i></div>
+          <a href="tel:+34615689300" class="hover:text-yellow-400 transition-colors text-sm md:text-base">
+            +34 615 689 300
+          </a>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div class="text-yellow-400">✉️</div>
+          <a href="mailto:costuras.alicante@hotmail.com" class="hover:text-yellow-400 transition-colors text-sm md:text-base">
+            costuras.alicante@hotmail.com
+          </a>
         </div>
       </div>
-      
+
+      <!-- Síguenos -->
+      <div class="w-full md:w-1/2">
+        <h4 class="text-xl font-bold text-white mb-4">Síguenos</h4>
+        <div class="flex space-x-4">
+          <a href="https://web.facebook.com/costurasalicanteoficial" target="_blank" class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+            <i class="fab fa-facebook-f text-white text-lg"></i>
+          </a>
+          <a href="https://www.instagram.com/costurasalicanteoficial/" target="_blank" class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+            <i class="fab fa-instagram text-white text-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>     
       <div class="border-t border-gray-700 mt-8 md:mt-12 pt-6 md:pt-8 text-center">
         <p class="text-gray-400 text-sm md:text-base">&copy; 2024 Costuras Alicante. Todos los derechos reservados. | Diseñado con ❤️ en Alicante</p>
       </div>
