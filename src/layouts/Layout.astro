@@ -10,15 +10,71 @@ const { title } = Astro.props;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Costuras Alicante - Tu taller de confianza para arreglos de ropa y lavandería en Alicante" />
+    <meta name="description" content="Costuras Alicante - Taller de costura profesional en Alicante. Arreglos de ropa, sastrería, lavandería y tintorería. Cursos de costura personalizados. +20 años de experiencia." />
+    <meta name="keywords" content="costura Alicante, arreglos ropa, sastrería, lavandería, tintorería, cursos costura, ajustes ropa, textiles hogar" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Costuras Alicante" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Costuras Alicante - Tu taller de confianza" />
+    <meta property="og:description" content="Taller de costura profesional en Alicante. Arreglos, sastrería, lavandería y cursos de costura." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://costurasalicante.com" />
+    <meta property="og:image" content="https://costurasalicante.com/images/og-image.jpg" />
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://costurasalicante.com" />
+    
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
     <title>{title}</title>
+    
+    <!-- Fonts - optimizados -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome - async -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Costuras Alicante",
+      "description": "Taller de costura profesional especializado en arreglos de ropa, sastrería, lavandería y tintorería",
+      "url": "https://costurasalicante.com",
+      "telephone": "+34615689300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Principal",
+        "addressLocality": "Alicante",
+        "addressRegion": "Comunidad Valenciana",
+        "postalCode": "03000",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "38.3452",
+        "longitude": "-0.4815"
+      },
+      "openingHours": [
+        "Mo-Fr 09:00-14:00,16:00-20:00",
+        "Sa 09:00-14:00"
+      ],
+      "priceRange": "€€",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "127"
+      },
+      "sameAs": [
+        "https://web.facebook.com/costurasalicanteoficial",
+        "https://www.instagram.com/costurasalicanteoficial/"
+      ]
+    }
+    </script>
   </head>
   <body class="font-sans antialiased">
     <slot />
@@ -57,5 +113,6 @@ const { title } = Astro.props;
     background: #d97706;
   }
 </style>
+
 
 

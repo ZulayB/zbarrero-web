@@ -1,32 +1,53 @@
-Crea una landing page para un negocio llamado Costuras Alicante, ubicado en España. El negocio ofrece servicios de costura y lavandería. 
-El diseño debe ser limpio, moderno y responsivo. El color predominante es el amarillo, blanco y algunas cosas en negro. 
-Quiero que sea construido en astro y en tailwind que ya estan instalados en este proyecto.
+1. Revisa que el sitio sea completamente responsive en los siguientes breakpoint
+- sm (640px)
+- md (768px)
+- lg (1024px)
+- xl (1280px)
 
-Debe contener:
 
-1. Header con logo (pon un placeholder en svg nombre "Costuras Alicante", navegación simple con enlaces: Inicio, Servicios, Contacto, que navega navega en la misma pagina..
+2. Haz que los textos de los titulos sean completamente responsive usando los siguientes breakpoints:
 
-2. Hero Section (quiero poder manejar también la altura de esta secciòn en autonomia)  con una imagen de fondo relacionada con costura o lavandería (placeholder), un título llamativo como: “Tu taller de confianza en Alicante”, y un subtítulo: “Arreglos de ropa y lavandería con calidad y cuidado”.
+- sm (640px)
+- md (768px)
+- lg (1024px)
+- xl (1280px)
 
-3. Sección de servicios de costura, con íconos o tarjetas que expliquen los arreglos disponibles: 
+Usa clases o estilos que ajusten el tamaño del texto (font-size) según el breakpoint, por ejemplo:
+- sm: text-base
+- md: text-lg
+- lg: text-xl
+- xl: text-2xl
 
-Ropa de Vestir
-Arreglos y ajustes para prendas de uso diario y formal.
-Incluye:
-Chaquetas, Americanas, Pantalones, Vestidos, Camisas, Blusas, Abrigos
+Asegúrate de que los textos escalen suavemente entre dispositivos móviles y pantallas grandes. Usa TailwindCSS si es posible.
 
-🪡 Sastrería y Modificaciones Personalizadas
-Servicios especializados para adaptar, transformar o renovar prendas.
-Incluye:
-Arreglos de sastrería, Ajustes de talla, Cambios de cierre o botones, Reparación de costuras
 
-🏠 Textiles para el Hogar
-Ajustes, reformas y mantenimiento de elementos textiles del hogar.
-Incluye:
-Cortinas, Mantas, Fundas (cama, cojines, sofás), Edredones
+3- Quiero mejorar el SEO técnico y estructural del código. Por favor:
 
-4. Sección de lavandería, breve, con descripción de servicios: lavado en seco, lavado normal, planchado.
+a. Añade o corrige las meta etiquetas `<title>` y `<meta name="description">` en cada página.
+b. Verifica y ajusta la jerarquía de encabezados HTML (`<h1>`, `<h2>`, `<h3>`) según buenas prácticas.
+c. Asegúrate de que todas las imágenes tengan atributos `alt` descriptivos con palabras clave relevantes.
+d. Agrega etiquetas `<link rel="canonical">` donde sea necesario.
+e. Sugiere e implementa marcado estructurado JSON-LD para LocalBusiness, Service y Course usando schema.org.
+f. Mejora la semántica general del HTML donde sea posible.
+g. Agrega un archivo `robots.txt` básico y un `sitemap.xml` con las rutas del sitio.
+h. Optimiza el HTML para tiempos de carga (elimínalo innecesario, carga scripts async/defer si aplica).
+i. Identifica si hay enlaces externos que requieran `rel="noopener noreferrer"`.
 
-5. mapa full width con la ubicacion
+Puedes modificar directamente los archivos HTML o Astro, y dejar comentarios si hay algo que debería mejorarse pero requiere contexto adicional.
 
-Footer con dirección en Alicante (Avenida Alcoy Nº 9 - 03010 Alicante), teléfono (+34 615689300), y redes sociales (Facebook e Instagram), horarios de atencion (Horarios: Lun-Vie: 9-14 / 17-20 | Festivos: Cerrado)
+4. Quiero añadir una sección despues de la secciòn "Servicio de Lavandería y tintorería" en elsitio que muestre testimonios y calificaciones de clientes simulando el estilo de las reseñas de Google, puedes tomas como jemplo las reseñas de google de Costuras Alicante en España.
+
+a. Crea una nueva sección en HTML (o en Astro) con un título como “Opiniones de nuestros clientes” en el estilo del sitio.
+b. Agrega 3 bloques de reseñas con:
+   - Nombre del cliente
+   - Texto de reseña
+   - Algunos con calificación de 4 o 5 estrellas (en íconos SVG o Unicode).  Las etrellas deben tener color gris cuando es inactiva y amarillo activa.
+   - Fecha de la reseña
+c. En la parte inferior de la seccion, inserta un botón o enlace para “Ver más reseñas en Google” con enlace a la ficha de Google Business.
+d. muestra la calificación promedio (ej. “4.8 ★ en Google”) en la parte superior de la sección.
+e. Usa buenas prácticas SEO y HTML semántico.
+f. Asegúrate de que sea responsive y visualmente consistente con el diseño actual.
+
+Haz los comentarios necesarios en el código para indicar cómo conectar esto con la API de Google en el futuro si se desea automatizar.
+
+5. Si tienes preguntas o cualquier cosa no es claro, pregunta.
