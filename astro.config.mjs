@@ -6,4 +6,5 @@ export default defineConfig({
   outDir: 'docs',
   integrations: [tailwind()],
   site: 'https://zulayb.github.io/zbarrero-web/',
+  base: '/zbarrero-web/',
 });
