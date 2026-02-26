@@ -1,0 +1,150 @@
+---
+// Header — zulay barrero. portfolio
+---
+
+<header class="w-full bg-white border-b border-gray-100">
+
+  <!-- Top bar: logo | subtitle | language -->
+  <div class="max-w-[1440px] mx-auto px-8 md:px-14 lg:px-20 py-6 mb-5 flex items-center justify-between gap-4">
+
+    <!-- Logo -->
+    <a href="/" class="font-heading font-bold text-3xl md:text-4xl text-gray-900 whitespace-nowrap shrink-0">
+      zulay barrero<span class="text-accent">.</span>
+    </a>
+
+    <!-- Subtitle (hidden on small mobile, centered) -->
+    <p class="hidden sm:block font-body text-base md:text-lg text-gray-500 text-center leading-tight">
+      User Experience Designer&nbsp;/&nbsp;User Experience Interface
+    </p>
+
+    <!-- Language selector -->
+    <div class="relative shrink-0">
+      <button
+        id="lang-btn"
+        aria-label="Seleccionar idioma"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+        class="font-body text-lg font-semibold text-gray-900 bg-transparent cursor-pointer flex items-center gap-1 focus:outline-none"
+      >
+        <span id="lang-current">IT</span>
+        <span class="text-accent text-xs">▼</span>
+      </button>
+      <!-- Dropdown -->
+      <ul
+        id="lang-dropdown"
+        role="listbox"
+        aria-label="Idiomas"
+        class="hidden absolute right-0 top-full mt-1 bg-white border border-gray-200 shadow-sm z-50 min-w-[60px]"
+      >
+        <li role="option" data-lang="it" class="font-body text-sm text-gray-900 px-3 py-1.5 cursor-pointer hover:bg-gray-50 hover:text-accent transition-colors">IT</li>
+        <li role="option" data-lang="en" class="font-body text-sm text-gray-900 px-3 py-1.5 cursor-pointer hover:bg-gray-50 hover:text-accent transition-colors">EN</li>
+        <li role="option" data-lang="es" class="font-body text-sm text-gray-900 px-3 py-1.5 cursor-pointer hover:bg-gray-50 hover:text-accent transition-colors">ES</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Nav bar -->
+  <nav aria-label="Navegación principal">
+
+    <!-- Desktop nav — full-width bordered grid, aligned with top bar -->
+    <div class="hidden md:block max-w-[1440px] mx-auto px-8 md:px-14 lg:px-20 pb-5">
+      <div class="grid grid-cols-3 border border-gray-400">
+        <a href="#acerca"
+           class="font-body text-base font-medium text-gray-900 hover:text-accent transition-colors duration-200 text-center py-4 border-r border-gray-400">
+          Acerca de mi / Servicios
+        </a>
+        <a href="#trabajos"
+           class="font-body text-base font-medium text-gray-900 hover:text-accent transition-colors duration-200 text-center py-4 border-r border-gray-400">
+          Trabajos
+        </a>
+        <a href="#contacto"
+           class="font-body text-base font-medium text-gray-900 hover:text-accent transition-colors duration-200 text-center py-4">
+          Contacto
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile nav toggle -->
+    <div class="md:hidden flex items-center justify-end px-5 py-2 border-t border-gray-200">
+      <button
+        id="menu-toggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-accent"
+      >
+        <span class="block w-6 h-0.5 bg-gray-800 mb-1.5 transition-all duration-300" id="bar1"></span>
+        <span class="block w-6 h-0.5 bg-gray-800 mb-1.5 transition-all duration-300" id="bar2"></span>
+        <span class="block w-6 h-0.5 bg-gray-800 transition-all duration-300" id="bar3"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu (collapsible) -->
+    <div
+      id="mobile-menu"
+      class="md:hidden hidden flex-col gap-0 border-t border-gray-200"
+    >
+      <a href="#acerca"   class="font-body text-sm font-medium text-gray-900 hover:text-accent hover:bg-gray-50 px-6 py-4 border-b border-gray-200 transition-colors">Acerca de mi / Servicios</a>
+      <a href="#trabajos" class="font-body text-sm font-medium text-gray-900 hover:text-accent hover:bg-gray-50 px-6 py-4 border-b border-gray-200 transition-colors">Trabajos</a>
+      <a href="#contacto" class="font-body text-sm font-medium text-gray-900 hover:text-accent hover:bg-gray-50 px-6 py-4 transition-colors">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Mobile menu
+  const toggle = document.getElementById('menu-toggle');
+  const menu   = document.getElementById('mobile-menu');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.contains('hidden') === false;
+    if (isOpen) {
+      menu?.classList.add('hidden');
+      menu?.classList.remove('flex');
+      toggle.setAttribute('aria-expanded', 'false');
+    } else {
+      menu?.classList.remove('hidden');
+      menu?.classList.add('flex');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      menu.classList.remove('flex');
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Language dropdown
+  const langBtn      = document.getElementById('lang-btn');
+  const langDropdown = document.getElementById('lang-dropdown');
+  const langCurrent  = document.getElementById('lang-current');
+
+  langBtn?.addEventListener('click', () => {
+    const isOpen = !langDropdown?.classList.contains('hidden');
+    langDropdown?.classList.toggle('hidden', isOpen);
+    langBtn.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!langBtn?.contains(e.target as Node)) {
+      langDropdown?.classList.add('hidden');
+      langBtn?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  langDropdown?.querySelectorAll('li').forEach(item => {
+    item.addEventListener('click', () => {
+      const lang = item.getAttribute('data-lang');
+      if (langCurrent) langCurrent.textContent = lang?.toUpperCase() ?? 'IT';
+      langDropdown.classList.add('hidden');
+      langBtn?.setAttribute('aria-expanded', 'false');
+      if (lang === 'en') window.location.href = '/en';
+      else if (lang === 'it') window.location.href = '/it';
+      else window.location.href = '/';
+    });
+  });
+</script>
+

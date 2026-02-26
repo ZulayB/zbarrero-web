@@ -1,0 +1,52 @@
+---
+// Hero — UX & UI DESIGN portfolio
+const chips = [
+  'B2B & BTC',
+  'UX/UI',
+  'Web & Mobile Apps',
+  'Presentaciones',
+  'Art Direction',
+  'Games',
+];
+---
+
+<section class="max-w-[1440px] mx-auto px-8 md:px-14 lg:px-20 pb-5">
+
+  <!-- Small text above -->
+<p class="font-body text-lg sm:text-xl font-semibold text-black mt-12 mb-4 md:mt-12 md:mb-6 tracking-wide">
+  Consultoría / Creación de Experiencias de Usuario
+</p>
+
+  <!-- Main title -->
+<h1 class="font-heading leading-none mb-8 md:mb-10 w-full">
+  <span class="inline-block bg-gray-900 text-white px-3 py-1 mr-2
+               text-7xl sm:text-8xl md:text-9xl lg:text-[14rem] xl:text-[14rem] tracking-wide">
+    UX &amp; UI
+  </span>
+
+  <span class="inline-block text-accent
+               text-7xl sm:text-8xl md:text-9xl lg:text-[14rem] xl:text-[14rem] tracking-wide">
+    DESIGN
+  </span>
+</h1>
+
+  <!-- Chips / Tags -->
+<div class="flex flex-wrap gap-4 sm:gap-5 mb-8 md:mb-10" role="list" aria-label="Especialidades">
+  {chips.map((chip) => (
+    <span
+      role="listitem"
+      class="font-body text-lg sm:text-xl font-medium text-[#323232] bg-[#EDEDED]
+             px-10 py-3 rounded-full whitespace-nowrap"
+    >
+      {chip}
+    </span>
+  ))}
+</div>
+
+  <!-- Descriptive text -->
+<p class="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed">
+  Este sitio es un portafolio personal dedicado al diseño UX, donde la claridad, la estructura y la experiencia digital son el eje central.
+</p>
+
+</section>
+

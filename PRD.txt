@@ -1,3 +1,92 @@
+Actúa como un desarrollador frontend senior experto en Astro y Tailwind CSS.
+
+Vamos a construir un sitio web de portafolio profesional basado en un diseño UX/UI dado por la usuaria.
+El sitio debe ser totalmente responsive (mobile, tablet, desktop) y seguir buenas prácticas de accesibilidad y semántica.
+Para la parte grafica analiza y sigue la imagen que te proporciono
+
+Tecnologías obligatorias:
+- Astro
+- Tailwind CSS
+- Componentes en Astro
+- Layout por secciones
+- Mobile-first
+
+Tipografías obligatorias (Google Fonts):
+- Anton → para títulos (h1, h2, h3, headlines)
+- Instrument Sans → para textos, párrafos, botones, chips y UI
+
+Agregar al proyecto:
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+Configurar Tailwind:
+- font-heading = 'Anton', sans-serif
+- font-body = 'Instrument Sans', sans-serif
+- color-accent = #FF00C8
+
+Estilo general:
+- Fondo blanco
+- Estética minimalista editorial UX
+- Negro y grises como base
+- Fucsia #FF00C8 como color acento principal
+- Mucho espacio en blanco
+- Grid limpio
+- Jerarquía tipográfica fuerte
+
+HEADER:
+Debe incluir:
+- Logo o texto: "zulay barrero."
+- Texto secundario centrado: "User Experience Designer / User Experience Interface"
+- Selector de idioma con un menu desplegable que despues llevarà a una pagina en ingles y otra en español, por consiguiente las voces seràn "IT" "EN" e "ES"
+- Menú horizontal:
+  - Acerca de mi / Servicios
+  - Trabajos
+  - Contacto
+- Menú responsive (hamburguesa en mobile)
+
+HERO:
+Debe incluir:
+- Texto pequeño arriba:
+  "Consultoría / Creación de Experiencias de Usuario"
+
+- Título principal grande:
+  UX & UI DESIGN
+  donde:
+   - "UX & UI" con fondo negro y texto blanco
+   - "DESIGN" en color #FF00C8
+
+- Chips debajo en forma de tags, con fondo en color #EDEDED y texto e #323232
+  - B2B & BTC
+  - UX/UI
+  - Web & Mobile Apps
+  - Presentaciones
+  - Art Direction
+  - Games
+
+- Texto descriptivo:
+  "Este sitio es un portafolio personal dedicado al diseño UX, donde la claridad, la estructura y la experiencia digital son el eje central."
+
+Implementar:
+- Layout responsive con Tailwind
+- Títulos con Anton
+- Textos con Instrument Sans
+- Chips con border-radius suave
+- Espaciado consistente
+- Código limpio y comentado
+
+Generar ahora:
+1) MainLayout.astro
+2) Header.astro
+3) Hero.astro
+4) index.astro
+
+No generar secciones adicionales todavía.
+No inventar contenido.
+No usar librerías externas.
+Usar solo Astro + Tailwind.
+
+
 1. Revisa que el sitio sea completamente responsive en los siguientes breakpoint
 - sm (640px)
 - md (768px)
@@ -18,36 +107,4 @@ Usa clases o estilos que ajusten el tamaño del texto (font-size) según el brea
 - lg: text-xl
 - xl: text-2xl
 
-Asegúrate de que los textos escalen suavemente entre dispositivos móviles y pantallas grandes. Usa TailwindCSS si es posible.
-
-
-3- Quiero mejorar el SEO técnico y estructural del código. Por favor:
-
-a. Añade o corrige las meta etiquetas `<title>` y `<meta name="description">` en cada página.
-b. Verifica y ajusta la jerarquía de encabezados HTML (`<h1>`, `<h2>`, `<h3>`) según buenas prácticas.
-c. Asegúrate de que todas las imágenes tengan atributos `alt` descriptivos con palabras clave relevantes.
-d. Agrega etiquetas `<link rel="canonical">` donde sea necesario.
-e. Sugiere e implementa marcado estructurado JSON-LD para LocalBusiness, Service y Course usando schema.org.
-f. Mejora la semántica general del HTML donde sea posible.
-g. Agrega un archivo `robots.txt` básico y un `sitemap.xml` con las rutas del sitio.
-h. Optimiza el HTML para tiempos de carga (elimínalo innecesario, carga scripts async/defer si aplica).
-i. Identifica si hay enlaces externos que requieran `rel="noopener noreferrer"`.
-
-Puedes modificar directamente los archivos HTML o Astro, y dejar comentarios si hay algo que debería mejorarse pero requiere contexto adicional.
-
-4. Quiero añadir una sección despues de la secciòn "Servicio de Lavandería y tintorería" en elsitio que muestre testimonios y calificaciones de clientes simulando el estilo de las reseñas de Google, puedes tomas como jemplo las reseñas de google de Costuras Alicante en España.
-
-a. Crea una nueva sección en HTML (o en Astro) con un título como “Opiniones de nuestros clientes” en el estilo del sitio.
-b. Agrega 3 bloques de reseñas con:
-   - Nombre del cliente
-   - Texto de reseña
-   - Algunos con calificación de 4 o 5 estrellas (en íconos SVG o Unicode).  Las etrellas deben tener color gris cuando es inactiva y amarillo activa.
-   - Fecha de la reseña
-c. En la parte inferior de la seccion, inserta un botón o enlace para “Ver más reseñas en Google” con enlace a la ficha de Google Business.
-d. muestra la calificación promedio (ej. “4.8 ★ en Google”) en la parte superior de la sección.
-e. Usa buenas prácticas SEO y HTML semántico.
-f. Asegúrate de que sea responsive y visualmente consistente con el diseño actual.
-
-Haz los comentarios necesarios en el código para indicar cómo conectar esto con la API de Google en el futuro si se desea automatizar.
-
-5. Si tienes preguntas o cualquier cosa no es claro, pregunta.
+Asegúrate de que los textos escalen suavemente entre dispositivos móviles y pantallas grandes. 
