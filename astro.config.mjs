@@ -3,6 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   output: 'static',
+  outDir: 'docs',
   integrations: [tailwind()],
-  site: 'https://costuras-alicante.pages.dev',
+  site: 'https://zulayb.github.io/zbarrero-web/',
 });
