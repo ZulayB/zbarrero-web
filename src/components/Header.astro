@@ -2,10 +2,10 @@
 // Header — zulay barrero. portfolio
 ---
 
-<header class="w-full bg-white border-b border-gray-100">
+<header class="w-full bg-white ">
 
   <!-- Top bar: logo | subtitle | language -->
-  <div class="max-w-[1440px] mx-auto px-8 md:px-14 lg:px-20 py-6 mb-5 flex items-center justify-between gap-4">
+  <div class="px-6 md:px-12 lg:px-[80px] desktop:px-[160px] py-6 mb-5 flex items-center justify-between gap-4">
 
     <!-- Logo -->
     <a href="/" class="font-heading font-bold text-3xl md:text-4xl text-gray-900 whitespace-nowrap shrink-0">
@@ -17,29 +17,46 @@
       User Experience Designer&nbsp;/&nbsp;User Experience Interface
     </p>
 
-    <!-- Language selector -->
-    <div class="relative shrink-0">
+    <!-- Right side: language + hamburger (mobile only) — todo alineado a la derecha -->
+    <div class="flex items-center gap-3 shrink-0">
+
+      <!-- Language selector -->
+      <div class="relative">
+        <button
+          id="lang-btn"
+          aria-label="Seleccionar idioma"
+          aria-haspopup="listbox"
+          aria-expanded="false"
+          class="font-body text-lg font-semibold text-gray-900 bg-transparent cursor-pointer flex items-center gap-1 focus:outline-none"
+        >
+          <span id="lang-current">IT</span>
+          <span class="text-accent text-xs">▼</span>
+        </button>
+        <ul
+          id="lang-dropdown"
+          role="listbox"
+          aria-label="Idiomas"
+          class="hidden absolute right-0 top-full mt-1 bg-white border border-gray-200 shadow-sm z-50 min-w-[60px]"
+        >
+          <li role="option" data-lang="it" class="font-body text-sm text-gray-900 px-3 py-1.5 cursor-pointer hover:bg-gray-50 hover:text-accent transition-colors">IT</li>
+          <li role="option" data-lang="en" class="font-body text-sm text-gray-900 px-3 py-1.5 cursor-pointer hover:bg-gray-50 hover:text-accent transition-colors">EN</li>
+          <li role="option" data-lang="es" class="font-body text-sm text-gray-900 px-3 py-1.5 cursor-pointer hover:bg-gray-50 hover:text-accent transition-colors">ES</li>
+        </ul>
+      </div>
+
+      <!-- Hamburger — solo mobile, subito dopo le lingue -->
       <button
-        id="lang-btn"
-        aria-label="Seleccionar idioma"
-        aria-haspopup="listbox"
+        id="menu-toggle"
+        aria-label="Abrir menú"
         aria-expanded="false"
-        class="font-body text-lg font-semibold text-gray-900 bg-transparent cursor-pointer flex items-center gap-1 focus:outline-none"
+        aria-controls="mobile-menu"
+        class="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-accent"
       >
-        <span id="lang-current">IT</span>
-        <span class="text-accent text-xs">▼</span>
+        <span class="block w-6 h-0.5 bg-gray-800 mb-1.5 transition-all duration-300" id="bar1"></span>
+        <span class="block w-6 h-0.5 bg-gray-800 mb-1.5 transition-all duration-300" id="bar2"></span>
+        <span class="block w-6 h-0.5 bg-gray-800 transition-all duration-300"        id="bar3"></span>
       </button>
-      <!-- Dropdown -->
-      <ul
-        id="lang-dropdown"
-        role="listbox"
-        aria-label="Idiomas"
-        class="hidden absolute right-0 top-full mt-1 bg-white border border-gray-200 shadow-sm z-50 min-w-[60px]"
-      >
-        <li role="option" data-lang="it" class="font-body text-sm text-gray-900 px-3 py-1.5 cursor-pointer hover:bg-gray-50 hover:text-accent transition-colors">IT</li>
-        <li role="option" data-lang="en" class="font-body text-sm text-gray-900 px-3 py-1.5 cursor-pointer hover:bg-gray-50 hover:text-accent transition-colors">EN</li>
-        <li role="option" data-lang="es" class="font-body text-sm text-gray-900 px-3 py-1.5 cursor-pointer hover:bg-gray-50 hover:text-accent transition-colors">ES</li>
-      </ul>
+
     </div>
   </div>
 
@@ -47,14 +64,14 @@
   <nav aria-label="Navegación principal">
 
     <!-- Desktop nav — full-width bordered grid, aligned with top bar -->
-    <div class="hidden md:block max-w-[1440px] mx-auto px-8 md:px-14 lg:px-20 pb-5">
-      <div class="grid grid-cols-3 border border-gray-400">
+    <div class="hidden md:block w-full px-6 md:px-12 lg:px-[80px] desktop:px-[160px] pb-5">
+      <div class="grid grid-cols-3 border border-gray-200">
         <a href="#acerca"
-           class="font-body text-base font-medium text-gray-900 hover:text-accent transition-colors duration-200 text-center py-4 border-r border-gray-400">
+           class="font-body text-base font-medium text-gray-900 hover:text-accent transition-colors duration-200 text-center py-4 border-r border-gray-200">
           Acerca de mi / Servicios
         </a>
         <a href="#trabajos"
-           class="font-body text-base font-medium text-gray-900 hover:text-accent transition-colors duration-200 text-center py-4 border-r border-gray-400">
+           class="font-body text-base font-medium text-gray-900 hover:text-accent transition-colors duration-200 text-center py-4 border-r border-gray-200">
           Trabajos
         </a>
         <a href="#contacto"
@@ -64,20 +81,6 @@
       </div>
     </div>
 
-    <!-- Mobile nav toggle -->
-    <div class="md:hidden flex items-center justify-end px-5 py-2 border-t border-gray-200">
-      <button
-        id="menu-toggle"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-accent"
-      >
-        <span class="block w-6 h-0.5 bg-gray-800 mb-1.5 transition-all duration-300" id="bar1"></span>
-        <span class="block w-6 h-0.5 bg-gray-800 mb-1.5 transition-all duration-300" id="bar2"></span>
-        <span class="block w-6 h-0.5 bg-gray-800 transition-all duration-300" id="bar3"></span>
-      </button>
-    </div>
 
     <!-- Mobile menu (collapsible) -->
     <div

@@ -1,0 +1,165 @@
+---
+// ExperienceSection.astro — Two-column layout: title + accordion
+
+interface AccordionItem {
+  id: string;
+  trigger: string;
+  content: string;
+}
+
+const items: AccordionItem[] = [
+  {
+    id: "acc-1",
+    trigger: "Conocimiento del usuario (Research)",
+    content:
+      "Investigo, escucho y analizo a fondo a los usuarios para construir soluciones que realmente respondan a sus necesidades reales. Cada decisión de diseño parte de datos concretos y pruebas de usabilidad, no de suposiciones, garantizando que el producto sea útil y deseado.",
+  },
+  {
+    id: "acc-2",
+    trigger: "Flujos de navegación intuitivos (Arquitectura de Información)",
+    content:
+      "Diseño estructuras lógicas que permiten al usuario encontrar lo que busca sin esfuerzo. Me aseguro de que la jerarquía visual y el camino de navegación sean tan naturales que el usuario no tenga que pensar, reduciendo la fricción y el abandono en procesos críticos.",
+  },
+  {
+    id: "acc-3",
+    trigger: "Diseño centrado en la conversión (UI & Interacción)",
+    content:
+      "Transformo el análisis en interfaces visualmente atractivas pero, sobre todo, funcionales. Utilizo principios de diseño visual (color, tipografía y espaciado) para guiar el ojo del usuario hacia las llamadas a la acción (CTA), optimizando la tasa de conversión y el retorno de inversión.",
+  },
+    {
+    id: "acc-4",
+    trigger: "Accesibilidad y Escalabilidad",
+    content:
+      "Siguiendo los estándares modernos, creo experiencias inclusivas que funcionan para todas las personas, independientemente de sus capacidades o dispositivos. Construyo sistemas de diseño (Design Systems) que permiten que tu producto crezca de forma coherente y eficiente a largo plazo.",
+  },
+];
+---
+
+<section
+  class="w-full md:block w-full px-6 md:px-12 lg:px-[80px] desktop:px-[160px] pb-5"
+  aria-labelledby="experience-heading">  
+
+
+ <div class=" py-0 md:py-8">
+   
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-start">
+
+<div class="lg:top-28">
+   <h2
+      id="experience-heading" class="font-heading text-6xl sm:text-7xl xl:text-[5.6rem] desktop:text-9xl pb-10 text-gray-900 leading-none shrink-0">
+      Experiencias <br>memorables</br>
+    </h2>
+<p class="font-body text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-xl">
+  Del sitio web a la app móvil, un buen diseño empieza por entender al usuario. Combinando estrategia UX y diseño UI para crear experiencias digitales claras, fluidas y coherentes.
+</p>
+</div>
+
+    <div
+      class="accordion-group divide-y divide-gray-200 border-b border-gray-200"
+      role="list"
+      data-accordion
+    >
+      {items.map((item, index) => (
+        <div
+          class="accordion-item"
+          role="listitem"
+          data-item
+        >
+          <button
+            type="button"
+            class="accordion-trigger w-full flex items-center justify-between gap-4 py-6 text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            aria-expanded={index === 0 ? "true" : "false"}
+            aria-controls={item.id}
+            data-trigger
+          >
+            <span class="font-body text-lg md:text-2xl font-semibold text-gray-900 group-hover:text-accent transition-colors duration-200">
+              {item.trigger}
+            </span>
+
+            <span class="accordion-icon shrink-0 text-gray-400 group-hover:text-accent transition-all duration-300" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22" height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transform transition-transform duration-300 group-aria-expanded:rotate-180"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+
+          <div
+            id={item.id}
+            class="accordion-panel grid transition-all duration-300 ease-in-out overflow-hidden"
+            data-panel
+            role="region"
+            aria-labelledby={item.id}
+          >
+            <div class="accordion-inner overflow-hidden">
+              <p class="font-body text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed pb-6 max-w-2xl">
+                {item.content}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</div>
+<div class="mt-20  " style="border-bottom: 1px solid #090a091a;"></div>
+</section>
+
+<style>
+  /* Collapsed state */
+  .accordion-panel { grid-template-rows: 0fr; }
+
+  /* Expanded state — toggled by JS */
+  .accordion-panel.is-open { grid-template-rows: 1fr; }
+
+  /* Arrow rotation */
+  .accordion-icon { transition: transform 0.3s ease; }
+  .is-open-trigger .accordion-icon { transform: rotate(180deg); }
+</style>
+
+<script>
+  const group = document.querySelector('[data-accordion]') as HTMLElement;
+  const items = group.querySelectorAll('[data-item]');
+
+  function openItem(item: Element) {
+    const trigger = item.querySelector('[data-trigger]') as HTMLButtonElement;
+    const panel   = item.querySelector('[data-panel]')  as HTMLElement;
+    trigger.setAttribute('aria-expanded', 'true');
+    trigger.classList.add('is-open-trigger');
+    panel.classList.add('is-open');
+  }
+
+  function closeItem(item: Element) {
+    const trigger = item.querySelector('[data-trigger]') as HTMLButtonElement;
+    const panel   = item.querySelector('[data-panel]')  as HTMLElement;
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.classList.remove('is-open-trigger');
+    panel.classList.remove('is-open');
+  }
+
+  // First item open by default
+  openItem(items[0]);
+
+  items.forEach((item) => {
+    const trigger = item.querySelector('[data-trigger]') as HTMLButtonElement;
+    trigger.addEventListener('click', () => {
+      const isAlreadyOpen = trigger.getAttribute('aria-expanded') === 'true';
+      // Close all
+      items.forEach(closeItem);
+      // Toggle clicked — open only if it wasn't open
+      if (!isAlreadyOpen) openItem(item);
+    });
+  });
+</script>
+

@@ -1,0 +1,135 @@
+---
+// Carousel.astro — Infinite auto-scrolling project carousel
+// Replace imgSrc values with your real project screenshots.
+
+interface Slide {
+  title: string;
+  imgSrc: string;
+  href: string;
+}
+
+const slides: Slide[] = [
+  {
+    title: "Originario",
+    imgSrc: "images/originario.png",
+    href: "#",
+  },
+  {
+    title: "Father.IO",
+    imgSrc: "images/fatherio_2025.png",
+    href: "#",
+  },
+  {
+    title: "Dashboard & Data Viz",
+    imgSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80",
+    href: "#",
+  },
+  {
+    title: "Brand Identity",
+    imgSrc: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=80",
+    href: "#",
+  },
+  {
+    title: "E-Commerce Experience",
+    imgSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80",
+    href: "#",
+  },
+  {
+    title: "Game UI / Art Direction",
+    imgSrc: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900&q=80",
+    href: "#",
+  },
+  {
+    title: "Web App & SaaS",
+    imgSrc: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&q=80",
+    href: "#",
+  },
+  {
+    title: "Presentaciones Ejecutivas",
+    imgSrc: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=900&q=80",
+    href: "#",
+  },
+];
+
+// Duplicate for seamless infinite loop
+const loopSlides = [...slides, ...slides];
+---
+
+<section class="py-14 overflow-hidden" aria-label="Proyectos destacados">
+
+  <div class="overflow-hidden" id="carousel-wrapper">
+    <div class="carousel-track flex" id="carousel-track">
+
+      {loopSlides.map((slide) => (
+        <a
+          href={slide.href}
+          class="carousel-slide block shrink-0 px-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          aria-label={slide.title}
+        >
+          <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-video group">
+            <!-- Image -->
+            <img
+              src={slide.imgSrc}
+              alt={slide.title}
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            />
+            <!-- Gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent pointer-events-none" />
+            <!-- Title -->
+            <p class="absolute bottom-4 left-5 font-body text-white font-semibold text-sm md:text-base drop-shadow">
+              {slide.title}
+            </p>
+          </div>
+        </a>
+      ))}
+
+    </div>
+  </div>
+
+</section>
+
+<style>
+  /* ── Responsive slide widths ── */
+  .carousel-slide { width: 100vw; }
+
+  @media (min-width: 768px)  { .carousel-slide { width: 50vw;      } }
+  @media (min-width: 1024px) { .carousel-slide { width: 33.333vw;  } }
+
+  /* ── Infinite scroll keyframe ──
+     Translates exactly -50% of the total track (= one full original set)
+     because we duplicated the slides, so 50% == N items. */
+  @keyframes carouselScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .carousel-track {
+    /* 30 s = comfortable reading pace; adjust to taste */
+    animation: carouselScroll 30s linear infinite;
+    will-change: transform;
+  }
+
+  /* Pause state toggled by JS on hover / focus */
+  .carousel-track.is-paused {
+    animation-play-state: paused;
+  }
+</style>
+
+<script>
+  const track   = document.getElementById('carousel-track')   as HTMLElement;
+  const wrapper = document.getElementById('carousel-wrapper') as HTMLElement;
+
+  const pause   = () => track.classList.add('is-paused');
+  const resume  = () => track.classList.remove('is-paused');
+
+  // Pause on mouse hover
+  wrapper.addEventListener('mouseenter', pause);
+  wrapper.addEventListener('mouseleave', resume);
+
+  // Pause when any child link receives keyboard focus
+  wrapper.addEventListener('focusin',  pause);
+  wrapper.addEventListener('focusout', resume);
+</script>
+

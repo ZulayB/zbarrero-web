@@ -4,13 +4,13 @@ const chips = [
   'B2B & BTC',
   'UX/UI',
   'Web & Mobile Apps',
-  'Presentaciones',
+  'Slide Deck Design',
   'Art Direction',
-  'Games',
+  'UX/UI Games',
 ];
 ---
 
-<section class="max-w-[1440px] mx-auto px-8 md:px-14 lg:px-20 pb-5">
+<section class="md:block w-full px-6 md:px-12 lg:px-[80px] desktop:px-[160px] pb-5">
 
   <!-- Small text above -->
 <p class="font-body text-lg sm:text-xl font-semibold text-black mt-12 mb-4 md:mt-12 md:mb-6 tracking-wide">
@@ -19,24 +19,22 @@ const chips = [
 
   <!-- Main title -->
 <h1 class="font-heading leading-none mb-8 md:mb-10 w-full">
-  <span class="inline-block bg-gray-900 text-white px-3 py-1 mr-2
-               text-7xl sm:text-8xl md:text-9xl lg:text-[14rem] xl:text-[14rem] tracking-wide">
+  <span class="inline-block bg-gray-900 text-white px-3 py-1 mr-2 text-[6rem] md:text-9xl lg:text-[9rem] xl:text-[12rem] desktop:text-[17rem] tracking-[0.04em]">
     UX &amp; UI
   </span>
 
-  <span class="inline-block text-accent
-               text-7xl sm:text-8xl md:text-9xl lg:text-[14rem] xl:text-[14rem] tracking-wide">
+  <span class="inline-block text-accent text-[6rem] md:text-9xl lg:text-[9rem] xl:text-[12rem] desktop:text-[17rem] tracking-[0.04em]">
     DESIGN
   </span>
 </h1>
 
   <!-- Chips / Tags -->
-<div class="flex flex-wrap gap-4 sm:gap-5 mb-8 md:mb-10" role="list" aria-label="Especialidades">
+<div class="flex flex-wrap gap-2 sm:gap-4 md:gap-5 mb-8 md:mb-10" role="list" aria-label="Especialidades">
   {chips.map((chip) => (
     <span
       role="listitem"
-      class="font-body text-lg sm:text-xl font-medium text-[#323232] bg-[#EDEDED]
-             px-10 py-3 rounded-full whitespace-nowrap"
+      class="font-body text-[0.9rem] sm:text-lg md:text-xl lg:text-[1.2rem] xl:text-[1.2rem] font-medium text-[#323232] bg-[#EDEDED]
+             px-6 py-1.5 sm:px-10 sm:py-3 lg:py-2 xl:py-2 rounded-full whitespace-nowrap"
     >
       {chip}
     </span>
@@ -45,8 +43,71 @@ const chips = [
 
   <!-- Descriptive text -->
 <p class="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed">
-  Este sitio es un portafolio personal dedicado al diseño UX, donde la claridad, la estructura y la experiencia digital son el eje central.
+  Diseño experiencias digitales que aumentan conversión y engagement
 </p>
-
+<!-- Marquee / testo scorrevole — banda inclinada -->
+<div class="marquee-wrapper">
+  <div class="marquee-band">
+    <div class="marquee-track flex whitespace-nowrap">
+      {[0, 1].map(() => (
+        <span class="flex items-center shrink-0">
+          {["Branding", "UX Research", "UI Design", "Prototypes", "Design System", "Web & Mobile"].map((word) => (
+            <>
+              <span class="font-heading text-[2rem] sm:text-[2.5rem] lg:text-[3rem] uppercase text-white tracking-tight px-6">
+                {word}
+              </span>
+              <span class="text-accent px-3 text-2xl leading-none" aria-hidden="true">|</span>
+            </>
+          ))}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>
+<div class="mt-12 mb-10" style="border-bottom: 1px solid #090a091a;"></div>
 </section>
+
+<style>
+  /* Contenedor que desborda la pantalla para que la banda rote sin huecos */
+  .marquee-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 4rem;
+    overflow: hidden;
+    height: 120px;
+  }
+
+  /* Solo mobile (< 640px) */
+  @media (max-width: 639px) {
+    .marquee-wrapper {
+      margin-top: 3rem;
+      height: 60px;
+    }
+  }
+
+  /* La banda negra ocupa más que el viewport y se rota */
+  .marquee-band {
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    background-color: #111111;
+    padding: 0.2 rem 0;  
+    transform-origin: center center;
+  }
+
+  /* Animación horizontal — translateX no se mezcla con rotate,
+     por eso animamos el track interno */
+  .marquee-track {
+    animation: marquee 22s linear infinite;
+  }
+
+  .marquee-band:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+</style>
 

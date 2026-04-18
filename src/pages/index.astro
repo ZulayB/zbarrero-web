@@ -2,11 +2,22 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import Carousel from '../components/Carousel.astro';
+import ExperienceSection from '../components/ExperienceSection.astro';
+import PortfolioSection from '../components/PortfolioSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <MainLayout>
   <Header />
   <main>
-    <Hero />
+    <Hero />   
+    <ExperienceSection />
+     <PortfolioSection />
+    <ServicesSection />   
+    <CtaSection />
   </main>
+  <Footer />
 </MainLayout>

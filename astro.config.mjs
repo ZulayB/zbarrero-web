@@ -3,8 +3,8 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   output: 'static',
-  outDir: 'docs',
+  outDir: 'dist',
   integrations: [tailwind()],
-  site: 'https://zulayb.github.io/zbarrero-web/',
-  base: '/zbarrero-web/',
+  site: 'https://zbarrero-web.pages.dev',
+  base: '/',
 });
